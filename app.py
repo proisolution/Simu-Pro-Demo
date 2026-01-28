@@ -553,10 +553,10 @@ elif st.session_state['current_page'] == 'batch':
     st.info(f"**Target Vector IDs:**\n\nBase: `{v5}` | With Context: `{v6}`")
     
     # The Big Button
-    if st.button(f"⚡ Generate Batch (10 Agents)", type="primary", use_container_width=True):
+    if st.button(f"⚡ Generate Batch (10 Decisions)", type="primary", use_container_width=True):
         batch = mock_batch_generate(s_age, s_gender, s_race, s_edu, s_inc, s_fam, s_city, 10)
         st.session_state['decision_bank'] = pd.concat([st.session_state['decision_bank'], batch], ignore_index=True)
-        st.success("✅ Generated 10 Agents!")
+        st.success("✅ Generated 10 Decisions!")
 
     # with col_right:
 
