@@ -136,8 +136,14 @@ def mock_batch_generate(age, gender, race, edu, inc, fam, city, count=10):
     vec_5, vec_6 = get_vectors(age, gender, race, edu, inc, fam)
     
     # Fake Score Logic (Just to make the demo look realistic)
-    base_score = 50
+    base_score = 30
     if fam == 'report': base_score += 30  # Family influence
+    if gender == 'Female': base_score += 5
+    if age == 'over 50': base_score += 5   
+    if race == 'Asian': base_score += 5
+    if edu == 'Bachelor or more': base_score += 5
+    if inc == 'above $70,000': base_score += 5
+    if race == 'Black': base_score -= 5
     if city == 'San Francisco': base_score += 10
     
     for _ in range(count):
